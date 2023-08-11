@@ -1,0 +1,52 @@
+<html>
+<body>
+<link href="./reset.css" rel="stylesheet">
+<link href="./popup.css" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
+
+<div class="inara">
+  <label for="query">Search</label>
+  <input type="search" id="query">
+  <div class="submit-grid">
+    <button type="submit" id="js-submit-inara">
+      Search Inara
+    </button>
+    <button type="submit" id="js-submit-edsm">
+      Search EDSM
+    </button>
+  </div>
+</div>
+<!--<div class="edsm">-->
+<!--  <label for="edsm">Search EDSM</label>-->
+<!--  <input type="search" id="edsm">-->
+<!--</div>-->
+
+<script src="popup.js"></script>
+<script type="application/javascript">
+  new TomSelect('#query', {
+    valueField: 'name',
+    labelField: 'name',
+    searchField: 'name',
+    load: function (query, callback) {
+      var url = 'https://www.edsm.net/api-v1/systems?systemName=' + encodeURIComponent(query);
+      fetch(url)
+        .then(response => response.json())
+        .then(json => {
+          callback(json.items);
+        }).catch(() => {
+        callback();
+      });
+
+    },
+  });
+</script>
+
+</body>
+</html>
