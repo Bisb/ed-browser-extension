@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Options</title>
+</head>
+<body>
+<h1>ED Browser Extention - Options</h1>
+<form>
+  <h2>Popup</h2>
+  <fieldset>
+    <legend>Default search</legend>
+
+    <label for="default-search-inara">Inara</label>
+    <input type="radio" name="default_search" id="default-search-inara" value="inara">
+
+    <label for="default-search-edsm">EDSM</label>
+    <input type="radio" name="default_search" id="default-search-edsm" value="edsm">
+  </fieldset>
+
+  <h2>Context menu</h2>
+  <div>
+    <label for="enable-inara-search">Enable Inara search</label>
+    <input type="checkbox" name="contextMenus[inara]" id="enable-inara-search">
+  </div>
+
+  <div>
+    <label for="enable-edsm-search">Enable EDSM search</label>
+    <input type="checkbox" name="contextMenus[edsm_system]" id="enable-edsm-search">
+  </div>
+
+  <button type="submit">Save</button>
+</form>
+
+<script src="./options.js"></script>
+</body>
+</html>

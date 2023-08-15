@@ -1,0 +1,46 @@
+{
+  "name": "Elite Dangerous Toolkit",
+  "short_name": "ED Toolkit",
+  "description": "This extension is made for demonstration purposes",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "action": {
+    "default_icon": "images/icon-16.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "options_page": "options.html",
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Shift+Alt+F"
+      }
+    },
+    "open-inara": {
+      "suggested_key": {
+        "default": "Shift+Alt+G"
+      },
+      "description": "Searchs the selected text on Inara"
+    },
+    "open-edsm": {
+      "suggested_key": {
+        "default": "Shift+Alt+H"
+      },
+      "description": "Searches the selected text on EDSM"
+    }
+  }
+}
