@@ -7,6 +7,7 @@ module.exports = {
     background: path.resolve(__dirname, "..", "src", "background.ts"),
     options: path.resolve(__dirname, "..", "src", "options.ts"),
     popup: path.resolve(__dirname, "..", "src", "popup.ts"),
+    edtools: path.resolve(__dirname, "..", "src", "edtools.ts"),
   },
   output: {
     path: path.join(__dirname, "../dist"),

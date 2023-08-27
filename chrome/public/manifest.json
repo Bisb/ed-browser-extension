@@ -42,5 +42,15 @@
       },
       "description": "Searches the selected text on EDSM"
     }
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://edtools.cc/*"
+      ],
+      "js": [
+        "edtools.js"
+      ]
+    }
+  ]
 }
